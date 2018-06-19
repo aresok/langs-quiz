@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Langs Quiz @ VirtusLab</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body class="app">
   <div class="wrapper">
     <img src="./logo.png" alt="" class="logo">
@@ -19,18 +21,44 @@
         <h2>Welcome to VirtusLab Languages Quiz</h2>
         <p>
           In this challenge you will be presented with a series of images representing different laguages.
-          Your task is to quess which programmin language is presented on an image. 
+          Your task is to guess which programmin language is presented on an image. 
         </p>
-        <div class="btn btn-primary">
+        <div class="btn btn-success">
           START
         </div>
       </div>
     </script>
     <script data-template="quiz-page" type="template">
-      QUIZ
+      <div class="quiz-question">
+        <img src="{{= it.currentQuizQuestion.image}}" alt="{{= it.currentQuizQuestion.image}}" class="image">
+        <form action="">
+            <div class="form-group">
+              <input type="text" class="form-control answer" placeholder="Programming language is...">
+            </div>
+        </form>
+      </div>
     </script>
     <script data-template="finish" type="template">
-      FINISH
+      <div class="finish">
+        <p>
+          Your result {{= it.currentQuizAnswers.filter(function (i) { return i }).length}}/{{= it.currentQuizAnswers.length}}
+        </p>
+        <p>
+          Your time {{= it.totalTime.hours}}:{{= it.totalTime.minutes}}:{{= it.totalTime.seconds}}
+        </p>
+        <div class="btn btn-primary">Go back</div>
+      </div>
+    </script>
+    <script>
+      window.__INIT__ = {
+        imagesExt: 'jpeg',
+        allAnswers: [
+          ["Kotki"],
+          ["Kotki", "AlsoKotki"],
+          ["Kotki"],
+          ["Kotki", "AlsoKotki"]
+        ]
+      };
     </script>
     <script src="./jquery.min.js"></script>
     <script src="./dot.min.js"></script>

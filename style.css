@@ -8,15 +8,15 @@ $swatch-primary-font-color-dark: #131414;```
 */
 
 body {
-  font-family: 'Roboto', sans-serif;
-  color: rgba(51, 51, 51, 0.80);
-  background: #F2F2F2;
+  font-family: "Roboto", sans-serif;
+  color: rgba(51, 51, 51, 0.8);
+  background: #f2f2f2;
 }
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 25px 0; 
+  padding: 25px 0;
 }
 
 .start {
@@ -24,6 +24,19 @@ body {
   text-align: center;
 }
 
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.start {
+  animation: show 0.3s linear;
+}
 .start p {
   padding: 10px 0;
   max-width: 50%;
@@ -31,6 +44,28 @@ body {
 }
 .start .btn {
   margin-top: 30px;
+}
+
+.quiz-question {
+  padding: 10px;
+  animation: show 0.3s linear;
+}
+.quiz-question .image {
+  border-radius: 3px;
+  border: 2px solid #19a14a;
+  max-height: 500px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+.quiz-question form {
+  padding-top: 10px;
+}
+
+.finish {
+  animation: show 0.3s linear;
+  padding: 40px 0;
+  text-align: center;
 }
 
 h1 {
