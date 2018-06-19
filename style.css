@@ -1,0 +1,39 @@
+/* *
+
+```$swatch-primary-color: #19a14a;
+$swatch-primary-color-dark: #147857;```
+
+```$swatch-primary-font-color: #333333;
+$swatch-primary-font-color-dark: #131414;```
+*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: rgba(51, 51, 51, 0.80);
+  background: #F2F2F2;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px 0; 
+}
+
+.start {
+  padding: 120px 0 0;
+  text-align: center;
+}
+
+.start p {
+  padding: 10px 0;
+  max-width: 50%;
+  margin: 0 auto;
+}
+.start .btn {
+  margin-top: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
