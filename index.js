@@ -75,10 +75,8 @@
   }, {});
   var beforeProgressTo = {
     start: function() {
-      var questionsCount = randomNumber({
-        min: window.__INIT__.availableImagesCount * 0.7,
-        max: window.__INIT__.availableImagesCount
-      });
+      var questionsCount = Math.floor(state.availableImagesCount * 0.8);
+
       setState({
         currentPage: availablePages[0],
         questionsList: shuffle(deepCopy(state.allQuestions)).slice(
@@ -188,9 +186,9 @@
     questionsCount: null
   };
   var setState = function(props) {
-    console.log(state, "stateBefore");
+    // console.log(state, "stateBefore");
     state = Object.assign({}, state, props);
-    console.log(state, "stateAfter");
+    // console.log(state, "stateAfter");
   };
   var render = function() {
     appContainer.innerHTML = templates[state.currentPage](state);
